@@ -1,0 +1,19 @@
+﻿Możliwość wyboru miesiąca
+Wyświetlanie tabeli opłat wraz z informacją które zostały opłacone
+
+
+
+Przeniesć na Cloud - Azure sql database?
+
+
+
+
+
+SELECT 
+      Pays.[Title]
+      ,[InstallmentDate]
+      ,[Amount]
+      ,Inst.[isPaid]
+  FROM [MyOrganizer].[dbo].[InstallmentTable] as Inst
+  LEFT JOIN PaymentTable as Pays on PaymentID = Pays.ID
+  Where Month(InstallmentDate) = 10 and Year(InstallmentDate) = 2018
